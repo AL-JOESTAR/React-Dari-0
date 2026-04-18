@@ -1,12 +1,11 @@
-import Header from "./Header"
-import MenuResto from "./MenuResto"
+import Mood from "./Mood"
 
-function App(){
+ function App(){
   
   return (
   <>
-  <Header/>
-  <MenuResto/>
+    <Mood hari = "senin" mood="sedih"/>
+    <Mood hari = "jumat" mood="senang"/>
   </>
 )
 }
