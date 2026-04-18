@@ -2,15 +2,28 @@ import './MenuResto.css'
 
 function MenuResto(){
 
-    const isMakanan = true; // Ternary oprator
+
+    // looping
+        const menu = [
+            {nama: 'nasi bakar', harga: 'Rp. 10.000' }, // -> dibuat object
+            {nama: 'Mie Goreng', harga: 'Rp. 7.000' },
+            {nama:  'Ayam Goreng', harga: 'Rp. 10.000' },
+        ]
     
     return(
-        <div className="menu-item">
-        <div><b>Nama Menu : </b><em>Nasi Bakar Pak Agus</em></div>
-        <div><b>Harga : </b><em>Rp. 20.000</em></div>
-        {(isMakanan == true) ? (<div>Tipe : Makanan</div>) : (<div>bukan makanan</div>)} {/* jika kondisi true dia ambil dibelakang ?, jika false di belakang :  */}
-        {/*{(isMakanan == true) && (<div>Tipe : Makanan</div>) -> untuk and and opration*/}
-        </div>
+        <>
+        {
+            menu.map((item, index) =>{
+                return (
+                <div className="menu-item" key={index}>
+                    <div><b>Nama Menu : </b><em>{item.nama}</em></div>
+                    <div><b>Nama Menu : </b><em>{item.harga}</em></div>
+                 </div>
+                )
+            }) 
+        }
+        </>
+
     )
 }
 
