@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Button (){
 
-    const [counter, setCounter] = useState(0);
+    const [countLike, setCountlike] = useState(0);
+    const [countDislike, setCountDislike] = useState(0);
 
-    let newCounter = 0;
-
-function clickHandler() {
-    newCounter = counter + 1;
-    console.log(`saya diklik ${newCounter}`);
-    setCounter(newCounter)
-
-}
+    useEffect(() => {
+        console.log(`test like ${countLike} | dislike ${countDislike}`);
+    }, []);
+    
 
     return (
-        <button onClick={clickHandler}>klik bray {counter}</button>
+        <>
+        <button onClick={() => setCountlike(countLike + 1)}>{countLike} Like</button>
+        <button onClick={() => setCountDislike(countDislike + 1)}>{countDislike} Dislike</button>
+        </>
     )
 }
 
